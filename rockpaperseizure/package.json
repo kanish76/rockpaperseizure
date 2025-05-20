@@ -3,18 +3,19 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage":"https://kanish76.github.io/rockpaperseizure",
-
-
+  "homepage": "https://kanish76.github.io/rockpaperseizure",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy":"gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "p5": "^2.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-p5": "^1.4.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",
@@ -24,4 +25,3 @@
     "vite": "^5.2.10"
   }
 }
-

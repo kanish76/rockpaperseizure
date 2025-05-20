@@ -1,20 +1,29 @@
-// src/App.jsx
-import { useEffect } from 'react'
-import Home from './pages/Home'
-import { initSmoothScroll } from './utils/smoothScroll'
-import CustomCursor from './components/CustomCursor'
+import { useState } from 'react'
+import Loader from './components/Loader'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Projects from './components/Projects'
+import Experiments from './components/Experiments'
+import Footer from './components/Footer'
 
 function App() {
-  useEffect(() => {
-    initSmoothScroll()
-  }, [])
+  const [loaded, setLoaded] = useState(false)
 
   return (
     <>
-      <CustomCursor />
-      <Home />
+      {!loaded && <Loader onDone={() => setLoaded(true)} />}
+      {loaded && (
+        <div className="bg-black text-white font-sans transition-opacity duration-1000 ease-in-out">
+          <Navbar />
+          <Hero />
+          <Projects />
+          <Experiments />
+          <Footer />
+        </div>
+      )}
     </>
   )
 }
 
 export default App
+
