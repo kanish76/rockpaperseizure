@@ -1,0 +1,10 @@
+// src/styles/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional additional styles */
+body {
+  cursor: none;
+}
+
